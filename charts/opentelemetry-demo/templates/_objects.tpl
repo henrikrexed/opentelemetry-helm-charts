@@ -169,6 +169,8 @@ spec:
     - port: {{ .value }}
       name: {{ .name}}
       targetPort: {{ .value }}
+      appProtocol: {{ .appProtocol }}
+
     {{- end }}
     {{- end }}
 
@@ -176,6 +178,7 @@ spec:
     - port: {{ .service.port}}
       name: tcp-service
       targetPort: {{ .service.port }}
+      appProtocol: {{ .service.appProtocol }}
     {{- if .service.nodePort }}
       nodePort: {{ .service.nodePort }}
     {{- end }}

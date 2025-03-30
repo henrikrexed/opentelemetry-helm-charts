@@ -179,6 +179,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: grpc
     env:
       - name: AD_PORT
         value: "8080"
@@ -200,6 +201,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: grpc
     env:
       - name: CART_PORT
         value: "8080"
@@ -227,6 +229,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: grpc
     env:
       - name: CHECKOUT_PORT
         value: "8080"
@@ -264,6 +267,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: grpc
     env:
       - name: CURRENCY_PORT
         value: "8080"
@@ -281,6 +285,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: http
     env:
       - name: EMAIL_PORT
         value: "8080"
@@ -319,6 +324,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: http
     env:
       - name: FRONTEND_PORT
         value: "8080"
@@ -364,6 +370,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: http
     env:
       - name: ENVOY_PORT
         value: "8080"
@@ -415,6 +422,7 @@ components:
       env: true
     service:
       port: 8081
+      appProtocol: http
     env:
       - name: IMAGE_PROVIDER_PORT
         value: "8081"
@@ -432,6 +440,7 @@ components:
       env: true
     service:
       port: 8089
+      appProtocol: http
     env:
       - name: LOCUST_WEB_HOST
         value: "0.0.0.0"
@@ -467,6 +476,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: grpc
     env:
       - name: PAYMENT_PORT
         value: "8080"
@@ -490,6 +500,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: grpc
     env:
       - name: PRODUCT_CATALOG_PORT
         value: "8080"
@@ -515,6 +526,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: http
     env:
       - name: QUOTE_PORT
         value: "8080"
@@ -536,6 +548,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: grpc
     env:
       - name: RECOMMENDATION_PORT
         value: "8080"
@@ -561,6 +574,7 @@ components:
       env: true
     service:
       port: 8080
+      appProtocol: grpc
     env:
       - name: SHIPPING_PORT
         value: "8080"
@@ -582,6 +596,7 @@ components:
     replicas: 1
     service:
       port: 8013
+      appProtocol: grpc
     env:
       - name: FLAGD_METRICS_EXPORTER
         value: otel
@@ -640,8 +655,10 @@ components:
     ports:
       - name: plaintext
         value: 9092
+        appProtocol: tcp
       - name: controller
         value: 9093
+        appProtocol: tcp
     env:
       - name: KAFKA_ADVERTISED_LISTENERS
         value: PLAINTEXT://kafka:9092
@@ -668,6 +685,7 @@ components:
     ports:
       - name: valkey-cart
         value: 6379
+        appProtocol: redis
     resources:
       limits:
         memory: 20Mi
